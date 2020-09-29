@@ -1,0 +1,143 @@
+import 'package:flutter/material.dart';
+
+void main() {
+  runApp(new MyApp());
+}
+class MyApp extends StatelessWidget {
+
+  @override
+  Widget build(BuildContext context) {
+    return new MaterialApp(
+      title: 'Generated App',
+      theme: new ThemeData(
+        primarySwatch: Colors.blue,
+        primaryColor: const Color(0xFF2196f3),
+        accentColor: const Color(0xFF2196f3),
+        canvasColor: const Color(0xFFfafafa),
+      ),
+      home: new MyHomePage(),
+    );
+  }
+}
+
+class MyHomePage extends StatefulWidget {
+  MyHomePage({Key key}) : super(key: key);
+  @override
+  _MyHomePageState createState() => new _MyHomePageState();
+}
+
+class _MyHomePageState extends State<MyHomePage> {
+    
+  TextEditingController pNumero = TextEditingController();
+TextEditingController sNumero = TextEditingController();
+TextEditingController tNumero = TextEditingController();
+TextEditingController resultado = TextEditingController();
+  
+  @override
+    Widget build(BuildContext context) {
+      return new Scaffold(
+        appBar: new AppBar(
+          title: new Text('Projeto soma'),
+          ),
+        body:
+          new Column(
+            mainAxisAlignment: MainAxisAlignment.start,
+            mainAxisSize: MainAxisSize.max,
+            crossAxisAlignment: CrossAxisAlignment.center,
+            children: <Widget>[
+              new Icon(
+                Icons.keyboard_hide,
+                color: const Color(0xFF000000),
+                size: 67.0),
+    
+              new Text(
+              "Primeiro valor:",
+                style: new TextStyle(fontSize:20.0,
+                color: const Color(0xFF000000),
+                fontWeight: FontWeight.w200,
+                fontFamily: "Merriweather"),
+              ),
+    
+              new TextField(
+                style: new TextStyle(fontSize:15.0,
+                color: const Color(0xFF000000),
+                fontWeight: FontWeight.w200,
+                fontFamily: "Merriweather"),
+				controller: pNumero,
+              ),
+    
+              new Text(
+              "Segundo valor:",
+                style: new TextStyle(fontSize:20.0,
+                color: const Color(0xFF000000),
+                fontWeight: FontWeight.w200,
+                fontFamily: "Merriweather"),
+              ),
+    
+              new TextField(
+                style: new TextStyle(fontSize:15.0,
+                color: const Color(0xFF000000),
+                fontWeight: FontWeight.w200,
+                fontFamily: "Merriweather"),
+				controller: sNumero,
+              ),
+    
+              new Text(
+              "Terceiro valor:",
+                style: new TextStyle(fontSize:20.0,
+                color: const Color(0xFF000000),
+                fontWeight: FontWeight.w200,
+                fontFamily: "Merriweather"),
+              ),
+    
+              new TextField(
+                style: new TextStyle(fontSize:15.0,
+                color: const Color(0xFF000000),
+                fontWeight: FontWeight.w200,
+                fontFamily: "Merriweather"),
+				controller: tNumero,
+              ),
+    
+              new Text(
+              "Resultado:",
+                style: new TextStyle(fontSize:20.0,
+                color: const Color(0xFF000000),
+                fontWeight: FontWeight.w200,
+                fontFamily: "Merriweather"),
+              ),
+    
+              new TextField(
+                style: new TextStyle(fontSize:15.0,
+                color: const Color(0xFF000000),
+                fontWeight: FontWeight.w200,
+                fontFamily: "Merriweather"),
+				controller: resultado,
+              ),
+    
+              new RaisedButton(key:null, onPressed:buttonPressed,
+                color: const Color(0xFFe0e0e0),
+                child:
+                  new Text(
+                  "Calcular",
+                    style: new TextStyle(fontSize:20.0,
+                    color: const Color(0xFF000000),
+                    fontWeight: FontWeight.w200,
+                    fontFamily: "Merriweather"),
+                  )
+                )
+            ]
+    
+          ),
+    
+      );
+    }
+    void buttonPressed(){
+		double num1 , num2 , num3, res;
+		num1 = double.parse(pNumero.text);
+		num2 = double.parse(sNumero.text);
+		num3 = double.parse(tNumero.text);
+		res = num1 + num2 + num3 ;
+		resultado.text = res.toString();
+	}
+    
+}
