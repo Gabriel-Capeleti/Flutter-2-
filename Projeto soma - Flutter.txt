@@ -137,7 +137,7 @@ TextEditingController resultado = TextEditingController();
 		num2 = double.parse(sNumero.text);
 		num3 = double.parse(tNumero.text);
 		res = num1 + num2 + num3 ;
-		resultado.text = res.toString()
+		resultado.text = res.toString();
 	}
     
 }
